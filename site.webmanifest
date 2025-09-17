@@ -1,0 +1,30 @@
+{
+    "name": "Suryaa S A - UI/UX Designer & Frontend Developer",
+    "short_name": "Suryaa Portfolio",
+    "description": "Professional UI/UX Designer and Frontend Developer portfolio showcasing modern web design and development skills.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0b0c10",
+    "theme_color": "#22D3EE",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["design", "development", "portfolio", "ui", "ux"],
+    "lang": "en",
+    "dir": "ltr"
+}
