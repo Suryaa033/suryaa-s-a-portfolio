@@ -3,7 +3,7 @@
 A modern, responsive portfolio website showcasing UI/UX design and frontend development skills.
 
 ## Live Demo
-[View Portfolio](https://your-portfolio-url.netlify.app)
+[View Portfolio](https://suryaa-s-a-portfolio.netlify.app/)
 
 ## Features
 - Responsive design for all devices
