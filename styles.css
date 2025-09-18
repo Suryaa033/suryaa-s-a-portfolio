@@ -1122,6 +1122,8 @@ section {
         padding: 2rem 0;
         z-index: 999;
         min-height: calc(100vh - 70px);
+        overflow-y: auto;
+        max-height: calc(100vh - 70px);
     }
 
     .navbar.scrolled .nav-menu {
@@ -1133,15 +1135,15 @@ section {
     }
 
     .nav-menu li {
-        margin: 1rem 0;
+        margin: 0.8rem 0;
     }
 
     .nav-link {
         display: block;
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
         border-radius: 8px;
-        margin: 0 1rem;
+        margin: 0 0.8rem;
         transition: all 0.3s ease;
     }
 
@@ -1589,6 +1591,23 @@ section {
 @media (max-width: 360px) {
     .container {
         padding: 0 10px;
+    }
+
+    /* Mobile navigation improvements for very small screens */
+    .nav-menu {
+        padding: 1.5rem 0;
+        min-height: calc(100vh - 60px);
+        max-height: calc(100vh - 60px);
+    }
+
+    .nav-menu li {
+        margin: 0.8rem 0;
+    }
+
+    .nav-link {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        margin: 0 0.5rem;
     }
 
     .hero-title {
