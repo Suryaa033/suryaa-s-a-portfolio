@@ -475,7 +475,7 @@
                         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=suryaasmart03@gmail.com&su=Portfolio%20Contact&body=Hi%20Suryaa,%0A%0AI%20would%20like%20to%20get%20in%20touch%20with%20you%20about%20your%20services.%0A%0ABest%20regards," class="social-link" target="_blank"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" id="contact-form">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
@@ -488,11 +488,10 @@
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=suryaasmart03@gmail.com&su=Portfolio%20Contact&body=Hi%20Suryaa,%0A%0AI%20would%20like%20to%20get%20in%20touch%20with%20you%20about%20your%20services.%0A%0ABest%20regards," 
-                       class="btn btn-primary" 
-                       target="_blank">
+                    <button type="submit" class="btn btn-primary" id="send-btn">
                         <i class="fas fa-paper-plane"></i> Send Message
-                    </a>
+                    </button>
+                    <div id="form-status" class="form-status"></div>
                 </form>
             </div>
         </div>

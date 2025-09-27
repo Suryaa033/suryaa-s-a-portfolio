@@ -59,8 +59,77 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Contact form handling - now just a direct Gmail link
-// No form submission needed as we're using direct Gmail link
+// Contact form handling - Gmail integration
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    const sendBtn = document.getElementById('send-btn');
+    const formStatus = document.getElementById('form-status');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Validate form
+            if (!name || !email || !subject || !message) {
+                formStatus.innerHTML = '<div class="error-message">Please fill in all fields before sending.</div>';
+                showNotification('Please fill in all fields', 'error');
+                return;
+            }
+            
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                formStatus.innerHTML = '<div class="error-message">Please enter a valid email address.</div>';
+                showNotification('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // Show loading state
+            sendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opening Gmail...';
+            sendBtn.disabled = true;
+            formStatus.innerHTML = '';
+            
+            // Create Gmail URL with pre-filled content
+            const gmailBody = `Hi Suryaa,
+
+I would like to get in touch with you about your services.
+
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+
+Best regards,
+${name}`;
+            
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=suryaasmart03@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(gmailBody)}`;
+            
+            // Open Gmail in new tab
+            setTimeout(() => {
+                window.open(gmailUrl, '_blank');
+                
+                // Show success message
+                formStatus.innerHTML = '<div class="success-message">Gmail opened! Please send the email from there. I\'ll get back to you soon.</div>';
+                showNotification('Gmail opened! Please send the email.', 'success');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Reset button state
+                sendBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                sendBtn.disabled = false;
+            }, 1000);
+        });
+    }
+});
 
 
 // Notification system
